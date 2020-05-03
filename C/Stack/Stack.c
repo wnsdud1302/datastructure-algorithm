@@ -70,3 +70,9 @@ void print(const Stack *s){
         putchar("\n");
     }
 }
+void Terminate(Stack *s){
+    if(s->stk != NULL){
+        free(s->stk);
+    }
+    s->max = s->ptr = 0;
+}
