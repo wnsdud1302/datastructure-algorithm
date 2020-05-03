@@ -1,5 +1,5 @@
-#ifndef ___Stack
-#define ___Stack
+#ifndef Stack_H
+#define Stack_H
 
 typedef struct Stack{
     int max;
