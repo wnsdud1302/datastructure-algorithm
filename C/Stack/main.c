@@ -26,8 +26,13 @@ int main(){
             break;
         
         case 2:
-            
+            if (Pop(&s, &x) == -1)
+                puts("\a : 푸시에 실패하였습니다.\n");
+            else
+                prinf("팝 데이터는 %d 입니다.\n", &x);
             break;
+        
+        case 3:
         }
     }
     
