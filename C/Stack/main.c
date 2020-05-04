@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "Stack.h"
+#include <stdio.h>
+
 
 int main(){
     Stack s;
@@ -12,15 +12,15 @@ int main(){
     while (1)
     {
         int menu, x;
-        prinf("현재 데이터수 %d / %d\n", size(&s), capacity(&s));
-        prinf("1: 푸시, 2: 팝, 3:피크, 4: 출력, 0: 종료 : ");
+        printf("현재 데이터수 %d / %d\n", size(&s), capacity(&s));
+        printf("1: 푸시, 2: 팝, 3:피크, 4: 출력, 0: 종료 : ");
         scanf("%d", &menu);
+        if (menu == 0) break;
         switch (menu)
         {
-        case 1 :
+        case 1:
             printf("데이터 : ");
             scanf("%d", &x);
-            Push(&s, x);
             if(Push(&s, x) == -1)
                 puts("\a : 푸시에 실패하였습니다.\n");
             break;
@@ -29,11 +29,23 @@ int main(){
             if (Pop(&s, &x) == -1)
                 puts("\a : 푸시에 실패하였습니다.\n");
             else
-                prinf("팝 데이터는 %d 입니다.\n", &x);
+                printf("팝 데이터는 %d 입니다.\n", x);
             break;
         
-        case 3:
+        case 3: 
+            if (Peek(&s, &x) == -1)
+                puts("\a : 피크에 실패하였습니다.\n");
+            else
+                printf("피크 데이터는 %d 입니다\n", x);
+            break;
+        case 4:
+            print(&s);
+            break;
         }
+
     }
+    Terminate(&s);
+    return 0;
     
 }
+
