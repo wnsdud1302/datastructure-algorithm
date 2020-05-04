@@ -13,7 +13,7 @@ int Initialize(Stack *s, int max){
 }
 
 int Push(Stack *s, int x){
-    if(s->ptr = s->max){
+    if(s->ptr >= s->max){
         return -1;
     }
     s->stk[s->ptr++] = x;
