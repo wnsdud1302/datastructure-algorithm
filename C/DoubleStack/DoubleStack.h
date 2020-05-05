@@ -21,7 +21,7 @@ int isEmpty(const DoubleStack *ds);
 int isFull(const DoubleStack *ds);
 int FrontSearch(const DoubleStack *ds, int x);
 int RearSearch(const DoubleStack *ds, int x);
-void Frontprint(const DoubleStack *ds);
+void FrontPrint(const DoubleStack *ds);
 void RearPrint(const DoubleStack *ds);
 void Terminate(DoubleStack *ds);
 
