@@ -53,12 +53,16 @@ int main(){
                 printf("피크 데이터는 %d 입니다. \n", x);
             break;
         case 7:
+            printf("data : ");
+            scanf("%d", &x);
             if(FrontSearch(&ds, x) == -1)
                 puts("\a오류 검색에 실패하였습니다.");
             else
                 printf("%d는 %d번째에 있습니다. \n",x, FrontSearch(&ds, x));
             break;
         case 8:
+            printf("data : ");
+            scanf("%d", &x);
             if(RearSearch(&ds, x) == -1)
                 puts("\a오류 검색에 실패하였습니다.");
             else
@@ -67,8 +71,10 @@ int main(){
         case 9:
             printf("앞쪽 : ");
             FrontPrint(&ds);
+            putchar('\n');
             printf("뒤쪽 : ");
             RearPrint(&ds);
+            putchar('\n');
             break;
 
         }        

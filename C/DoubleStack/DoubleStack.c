@@ -69,20 +69,20 @@ int FrontSearch(const DoubleStack *ds, int x){
 int RearSearch(const DoubleStack *ds, int x){
     for(int i = ds->rptr+1; i <= ds->max; i++){
         if(ds->stk[i] == x)
-            return i;
+            return ds->max - i - 1;
     }
     return -1;
 }
 void FrontPrint(const DoubleStack *ds){
         for(int i = 0; i < ds->fptr; i++){
         printf("%d ", ds->stk[i]);
-        putchar('\n');
+        putchar(' ');
         }
 }
 void RearPrint(const DoubleStack *ds){
-        for(int i = ds->max ; i > ds->rptr ; i--){
+        for(int i = ds->max -1  ; i > ds->rptr ; i--){
         printf("%d ", ds->stk[i]);
-        putchar('\n');
+        putchar(' ');
         }
 }
 void Terminate(DoubleStack *ds){
