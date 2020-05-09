@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdbool.h>
-#include"Queue.h"
+#include"queue.h"
 
 int Initialize(Queue *q, int max){
     q->num = q->front = q->rear = 0;
