@@ -1,4 +1,4 @@
-CC=g++
+CC=gcc
 CFLAGS=-g 
 OBJS=main.o 
 TARGET=main.exe
