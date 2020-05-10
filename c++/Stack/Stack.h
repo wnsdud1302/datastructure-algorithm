@@ -2,7 +2,7 @@
 #define STACK_H
 
 class Stack{
-    public:
+public:
     Stack();
     Stack(int n);
     int Push(int x);
@@ -15,8 +15,10 @@ class Stack{
     bool isFull();
     int Search(int x);
     void Print();
+    friend ostream& operator <<(ostream& outputStream, const Stack& str);
+
     void Terminate();
-    private:
+private:
     int max;
     int ptr;
     int *stk;
