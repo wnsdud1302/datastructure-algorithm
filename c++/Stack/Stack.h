@@ -16,7 +16,7 @@ public:
     int Search(int x);
     void Print();
     friend ostream& operator <<(ostream& outputStream, const Stack& str);
-    void Terminate();
+    ~Stack();
 private:
     int max;
     int ptr;
