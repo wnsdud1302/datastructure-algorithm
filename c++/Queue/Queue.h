@@ -11,7 +11,7 @@ private:
     int max;
 public:
     queue();
-    queue(int max);
+    queue(int n);
     void Enque(int x);
     void Deque(int *x);
     void Peek(int *x);
