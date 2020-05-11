@@ -10,7 +10,6 @@ private:
     int num;
     int max;
 public:
-    queue();
     queue(int n);
     void Enque(int x);
     void Deque(int *x);
