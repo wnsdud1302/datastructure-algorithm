@@ -26,7 +26,7 @@ int Stack::Pop(int *x){
     if(ptr == 0){
         return -1;
     }
-    *x = stk[ptr--];
+    *x = stk[--ptr];
     return 0;
 }
 
