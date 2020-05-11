@@ -74,3 +74,8 @@ void Stack::Print(){
     }
     cout << endl;
 }
+
+Stack::~Stack(){
+    if(stk != NULL)
+        delete stk;
+    max = ptr = 0;
