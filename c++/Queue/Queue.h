@@ -19,7 +19,7 @@ public:
     int Size();
     bool IsEmpty();
     bool IsFull();
-    void Search(int *x);
+    int Search(int *x);
     void Print();
     ~queue();
 };

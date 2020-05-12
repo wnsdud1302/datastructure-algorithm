@@ -1,5 +1,5 @@
 #include<iostream>
-#include"queue.h"
+#include"Queue.h"
 using namespace std;
 
 
@@ -55,16 +55,17 @@ bool queue::IsFull(){
     return num >= max;
 }
 
-void queue::Search(int *x, int idx){
+int queue::Search(int *x){
+    int idx;
     for(int i = 0; i < num; i++){
         if(que[idx = (i+front) % max] == *x)
-            break;
+            return idx;
     }
 }
 void queue::Print(){
     int idx;
     for(int i = 0; i < num; i++){
-        cout << que[(i+front) % max];
+        cout << que[(i+front) % max] << " ";
     }
     cout << endl;
 }
