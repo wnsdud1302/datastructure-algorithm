@@ -3,11 +3,12 @@
 typedef struct Node
 {
     int data;
-    Node *next;
+    struct Node *next; // 자기참조 struct를 붙여야함 아직 정의가 않끝났기때문
 }Node;
 
 typedef struct Linked_list{
     Node *head;
+    Node *crnt;
 }Linked_list;
 
 int Initialize(Linked_list *list);
@@ -16,7 +17,9 @@ int InsertBack(Linked_list *list, int data);
 void RemoveFront(Linked_list *list);
 void RemoveBack(Linked_list *list);
 void RemoveCurrent(Linked_list *list);
-void clear(Linked_list *list);
+void Search(Linked_list *list, int data);
+void Clear(Linked_list *list);
+void PrintCurrent(const Linked_list *list);
 void Print(const Linked_list *list);
 void Terminate(Linked_list *list);
 #endif
