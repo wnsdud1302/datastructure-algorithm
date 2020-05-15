@@ -2,20 +2,23 @@
 #include<stdlib.h>
 #include"Linked_list.h"
 
+Node *AllocNode(){
+    return calloc(1, sizeof(Node));
+}
 
 int Initialize(Linked_list *list){
     list->head = NULL;
     list->crnt = NULL;
 }
-int InsertFront(Linked_list *list, int data){
-    Node *tmpNode;
-    tmpNode->data = data;
+int InsertFront(Linked_list *list, int *data){
+    Node *tmpNode = AllocNode();
+    tmpNode->data = *data;
     tmpNode->next = list->head;
     list->head = tmpNode;
     list->crnt = list->head;
 }
-int Insertback(Linked_list *list, int data){
-    Node *tmpNode;
+int InsertBack(Linked_list *list, int *data){
+    Node *tmpNode = AllocNode();
     Node *start = list->head;
     while(start != NULL){
         start = start->next;
@@ -65,14 +68,19 @@ void RemoveCurrent(Linked_list *list){
     }
 }
 
-void Search(Linked_list *list, int data){
+int Search(Linked_list *list, int *data){
     Node *start = list->head;
-    while(start->next != NULL){
-        if(start->data == data){
+    int n = 1;
+    while(start != NULL){
+        if(start->data == *data){
             list->crnt = start;
+            return 0;
         }
         start = start->next;
+        n++;
     }
+    printf("%d는 n번째에 있습니다\n", start->data);
+    return -1;
 }
 
 void Clear(Linked_list *list){
@@ -85,7 +93,7 @@ void PrintCurrent(const Linked_list *list){
     if(list->crnt == NULL)
         printf("선택한 노드가 없습니다.");
     else
-        printf("%d 입니다.", list->crnt->data);
+        printf("%d 입니다.\n", list->crnt->data);
 }
 
 void Print(const Linked_list *list){

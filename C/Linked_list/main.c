@@ -1,33 +1,62 @@
 #include<stdio.h>
 #include"Linked_list.h"
 
-typedef enum Menu{
-    TERMINATE, INS_FRONT, INS_REAR, RMV_FRONT, RMV_BACK,
-    RMV_CRNT, SCRH, CRNT_PRINT, ALL_PRINT, CLEAR
-} Menu;
-
-Menu SelectMenu(){
-    int ch;
-    char *mstring[] = {
-        "머리에 노드를 삽입", "꼬리에 노드를 삽입", "머리에 노드삽입"
-        "꼬리노드를 삭제", "선택한 노드를 삭제", "검색", "선택한 노드를 출력",
-        "모든 노드를 출력", "모든 노드를 삭제",
-    };
-    do{
-        for(int i = TERMINATE; i < CLEAR; i++){
-            printf("(%2d) %-18.18s", i+1, mstring[i]);
-            if((i % 3) == 2)
-                putchar('\n');
-        }
-        printf("(0) 종료 : ");
-        scanf("%d", ch);
-    }while(ch < TERMINATE || ch > CLEAR);
-    return(Menu)ch;
-}
 
 int main(){
     Linked_list l;
     Initialize(&l);
+    while(1){
+        int menu, x;
+        printf("1: 앞쪽노드 삽입 2: 뒷쪽노드 삽입 3: 앞쪽노드 삭제 4: 뒤쪽노드 삭제 \n");
+        printf("5: 현재노드 삭제 6: 검색 7: 현재노드 출력 8: 모든 노드 출력 \n");
+        printf("9: 모든 노드 삭제 0:종료\n");
+        scanf("%d", &menu);
+        if(menu == 0) break;
+        switch(menu){
+            case 1:
+                printf("데이터 : ");
+                scanf("%d", &x);
+                InsertFront(&l, &x);
+                break;
 
+            case 2:
+                printf("데이터 : ");
+                scanf("%d", &x);
+                InsertBack(&l, &x);
+                break;
+
+            case 3:
+                RemoveFront(&l);
+                break;
+
+            case 4:
+                RemoveBack(&l);
+                break;
+            
+            case 5:
+                RemoveCurrent(&l);
+                break;
+
+            case 6:
+                printf("데이터 : ");
+                scanf("%d", &x);
+                if(Search(&l, &x) == -1)
+                    printf("찾는 숫자가 없습니다.\n");
+                break;
+
+            case 7:
+                PrintCurrent(&l);
+                break;
+
+            case 8:
+                Print(&l);
+                break;
+
+            case 9:
+                Clear(&l);
+                break;      
+        }
+    }
+    Terminate(&l);
     return 0;
 }

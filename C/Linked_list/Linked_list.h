@@ -12,12 +12,12 @@ typedef struct Linked_list{
 }Linked_list;
 
 int Initialize(Linked_list *list);
-int InsertFront(Linked_list *list, int data);
-int InsertBack(Linked_list *list, int data);
+int InsertFront(Linked_list *list, int *data);
+int InsertBack(Linked_list *list, int *data);
 void RemoveFront(Linked_list *list);
 void RemoveBack(Linked_list *list);
 void RemoveCurrent(Linked_list *list);
-void Search(Linked_list *list, int data);
+int Search(Linked_list *list, int *data);
 void Clear(Linked_list *list);
 void PrintCurrent(const Linked_list *list);
 void Print(const Linked_list *list);
