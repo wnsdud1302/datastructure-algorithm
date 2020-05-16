@@ -6,18 +6,18 @@ Node *AllocNode(){
     return calloc(1, sizeof(Node));
 }
 
-int Initialize(Linked_list *list){
+void Initialize(Linked_list *list){
     list->head = NULL;
     list->crnt = NULL;
 }
-int InsertFront(Linked_list *list, int *data){
+void InsertFront(Linked_list *list, int *data){
     Node *tmpNode = AllocNode();
     tmpNode->data = *data;
     tmpNode->next = list->head;
     list->head = tmpNode;
     list->crnt = list->head;
 }
-int InsertBack(Linked_list *list, int *data){
+void InsertBack(Linked_list *list, int *data){
     Node *tmpNode = AllocNode();
     Node *start = list->head;
     while(start != NULL){

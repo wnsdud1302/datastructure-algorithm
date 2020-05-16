@@ -11,9 +11,9 @@ typedef struct Linked_list{
     Node *crnt;
 }Linked_list;
 
-int Initialize(Linked_list *list);
-int InsertFront(Linked_list *list, int *data);
-int InsertBack(Linked_list *list, int *data);
+void Initialize(Linked_list *list);
+void InsertFront(Linked_list *list, int *data);
+void InsertBack(Linked_list *list, int *data);
 void RemoveFront(Linked_list *list);
 void RemoveBack(Linked_list *list);
 void RemoveCurrent(Linked_list *list);
