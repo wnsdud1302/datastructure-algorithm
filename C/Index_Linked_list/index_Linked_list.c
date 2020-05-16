@@ -116,13 +116,13 @@ void RemoveCurrent(list *l){
     }
 }
 
-void Clear(list *l){
+void Clear(const list *l){
     while(l->head != NULL)
         RemoveFront(l);
     l->crnt = NULL;
 }
 
-void PrintCurrent(list *l){
+void PrintCurrent(const list *l){
     if(l->crnt == NULL)
         printf("선택한 노드가 없습니다.\n");
     else
