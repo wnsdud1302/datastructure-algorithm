@@ -2,7 +2,7 @@
 #define INDEX_LINKED_LIST_H
 
 typedef int Index;
-
+#define Null -1
 typedef struct Node{
     int data;
     Index next;
@@ -19,7 +19,7 @@ typedef struct Index_Linked_list{
 void Initialize(list *l, int size);
 Index Search(list *l, int *data);
 void InsertFront(list *l, int *data);
-void insertBack(list *l, int *data);
+void InsertBack(list *l, int *data);
 void RemoveFront(list *l);
 void RemoveBack(list *l);
 void RemoveCurrent(list *l);
