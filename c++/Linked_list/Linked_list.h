@@ -16,7 +16,7 @@ public:
     void RemoveCurrent();
     Node *Search(int data);
     void Clear();
-    void Printurrent();
+    void PrintCurrent();
     void PrintNode(Node *n);
     void Print();
     ~Linked_list(); 

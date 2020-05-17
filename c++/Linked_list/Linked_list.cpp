@@ -28,22 +28,25 @@ void Linked_list::InsertBack(int data){
 }
 
 void Linked_list::RemoveFront(){
+    Node *tmpNode = NULL;
     if(head != NULL){
-        head->next = crnt;
+        tmpNode = head->next;
         delete head;
     }
+    head = tmpNode;
 }
 
 void Linked_list::RemoveBack(){
-    if(head == NULL)
+    if(head->next == NULL)
         RemoveFront();
     else{
         Node *tmpNode;
         Node *start = head;
-        while(start != NULL){
+        while(start->next != NULL){
             tmpNode = start;
             start = start->next;
         }
+        tmpNode->next = NULL;
         delete start;
         crnt = tmpNode;
     }
@@ -67,8 +70,8 @@ void Linked_list::RemoveCurrent(){
 
 Node *Linked_list::Search(int data){
     Node *start = head;
-    int n = 1;
     while(start != NULL){
+        int n = 1;
         if(start->data = data){
             crnt = start;
             cout << n << "번째에 있습니다." << endl;
@@ -87,4 +90,32 @@ void Linked_list::Clear(){
         start = start->next;
     }
     crnt = NULL;
+}
+
+void Linked_list::PrintCurrent(){
+    int n = 1;
+    Node *start = head;
+    while(start != crnt){
+        start = start->next;
+        n++;
+    }
+    cout << "현재노드" << start->data << "는 " << n << "번째에 있습니다" << endl;
+}
+
+void Linked_list:: PrintNode(Node *n){
+    cout << n->data << "입니다" << endl;
+
+}
+
+void Linked_list::Print(){
+    Node *start = head;
+    while(start != NULL){
+        cout << start->data << " ";
+        start = start->next;
+    }
+    cout << endl;
+}
+
+Linked_list::~Linked_list(){
+    cout << "리스트를 삭제하였습니다." << endl;
 }
