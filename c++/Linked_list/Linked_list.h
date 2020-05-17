@@ -17,6 +17,7 @@ public:
     Node *Search(int data);
     void Clear();
     void Printurrent();
+    void PrintNode();
     void Print();
     ~Linked_list(); 
 private:
