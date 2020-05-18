@@ -138,7 +138,7 @@ void Print(const list *l){
             printf("%d ", l->n[start].data);
             start = l->n[start].next;
         }
-
+    putchar('\n');
     }
 }
 
