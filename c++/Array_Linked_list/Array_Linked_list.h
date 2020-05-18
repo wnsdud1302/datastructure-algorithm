@@ -18,14 +18,14 @@ class Arraylinkedlist{
         Index GetIndex();
         Index DeleteIndex(Index idx);
         Index Search(int *data);
-        void InseartFront(int *data);
-        void InseartBack(int *data);
+        void InsertFront(int *data);
+        void InsertBack(int *data);
         void RemoveFront();
         void RemoveBack();
         void RemoveCurrent();
         void Clear();
-        void Printcurrent();
-        void PrintIndex();
+        void PrintNode(Index idx);
+        void PrintCurrent();
         void Print();
         ~Arraylinkedlist();
     private:
