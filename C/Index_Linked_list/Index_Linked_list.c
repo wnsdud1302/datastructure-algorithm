@@ -113,8 +113,11 @@ void RemoveCurrent(list *l){
 }
 
 void Clear(list *l){
-    while(l->head != Null)
+    Index start = l->head;
+    while(start != Null){
         RemoveFront(l);
+        start = l->n[start].next;
+    }
     l->crnt = Null;
 }
 
