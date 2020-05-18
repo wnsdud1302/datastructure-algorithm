@@ -116,7 +116,6 @@ void Clear(list *l){
     Index start = l->head;
     while(start != Null){
         RemoveFront(l);
-        start = l->n[start].next;
     }
     l->crnt = Null;
 }
