@@ -1,24 +1,22 @@
 #ifndef DOUBLE_LINKED_LIST_H
 #define DOUBLE_LINKED_LIST_H
 
-typedef struct Dnode
-{
+typedef struct Dnode{
     int data;
-    struct Node *next;
-    struct Node *prev;
+    struct Dnode *next;
+    struct Dnode *prev;
 }Dnode;
 
 typedef struct Double_linked_list{
     Dnode *head;
-    Dnode *tail;
     Dnode *crnt;
 }list;
 
 void Initialize(list *l);
-void SetNode(Dnode *n, const int *data, const Dnode *next, const Dnode *prev);
-void InsertFront(list *l);
-void Insert(list *l, Dnode *dn, const int *data);
-void InsertBack(list *l);
+void SetNode(Dnode *n, int *data, Dnode *next, Dnode *prev);
+void Insert(list *l, Dnode *dn, int *data);
+void InsertFront(list *l, int *data);
+void InsertBack(list *l, int *data);
 void Remove(list *l, Dnode *dn);
 void RemoveFront(list *l);
 void RemoveBack(list *l);
