@@ -9,11 +9,11 @@ typedef struct Dnode{
 
 typedef struct Double_linked_list{
     Dnode *head;
+    Dnode *tail;
     Dnode *crnt;
 }list;
 
 void Initialize(list *l);
-void SetNode(Dnode *n, int *data, Dnode *next, Dnode *prev);
 void Insert(list *l, Dnode *dn, int *data);
 void InsertFront(list *l, int *data);
 void InsertBack(list *l, int *data);
@@ -23,9 +23,9 @@ void RemoveBack(list *l);
 Dnode *search(list *l, int *data);
 int Next(list *l);
 int Prev(list *l);
-void PrintCurrent(list *l);
-void Print(list *l);
-void PrintReverse(list *l);
+void PrintCurrent(const list *l);
+void Print(const list *l);
+void PrintReverse(const list *l);
 void Clear(list *l);
 void Terminate(list *l);
 
