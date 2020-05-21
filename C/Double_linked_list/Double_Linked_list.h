@@ -20,7 +20,7 @@ void InsertBack(list *l, int *data);
 void Remove(list *l, Dnode *dn);
 void RemoveFront(list *l);
 void RemoveBack(list *l);
-Dnode *search(list *l, int *data);
+Dnode *Search(list *l, int *data);
 int Next(list *l);
 int Prev(list *l);
 void PrintCurrent(const list *l);

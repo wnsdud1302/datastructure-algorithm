@@ -17,11 +17,11 @@ static int IsEmpty(const list *l){
 }
 
 void Initialize(list *l){
-    l->head = NULL;
-    l->tail = NULL;
-    l->crnt = l->head->next;
+    l->head  = AllocDnode();
+    l->tail = AllocDnode();
     l->head->next = l->tail;
     l->tail->prev = l->head;
+    l->crnt = l->head->next;
 }
 
 void Insert(list *l, Dnode *dn,int *data ){
@@ -55,7 +55,7 @@ void RemoveBack(list *l){
     Remove(l, l->tail->prev);
 }
 
-Dnode *search(list *l, int *data){
+Dnode *Search(list *l, int *data){
     Dnode *start = l->head;
     while( start->next != l->tail){
         if(start->data = *data){
@@ -99,4 +99,22 @@ void Print(const list *l){
     putchar('\n');
 }
 
-void PrintReverse
+void PrintReverse(const list *l){
+    Dnode *start = l->tail->next;
+    while (start != l->head){
+        printf("%d ", start->data);
+        start = start->prev;
+    }
+    putchar('\n');
+}
+
+void Clear(list *l){
+    Dnode *start = l->head;
+    while(start != l->tail)
+        RemoveFront(l);
+    l->crnt = NULL;
+}
+ void Terminate(list *l){
+     Clear(l);
+     l->head = l->tail = l->crnt = NULL;
+ }
