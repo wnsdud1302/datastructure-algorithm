@@ -13,7 +13,7 @@ class Node{
 class Double_linked_list{
     public:
         Double_linked_list();
-        void Insert(Node *n,int *data);
+        void insert(Node *n,int *data);
         void InsertFront();
         void InsertBack();
         void Remove(Node *n);
