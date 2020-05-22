@@ -84,10 +84,9 @@ Node *Linked_list::Search(int data){
 }
 
 void Linked_list::Clear(){
-    Node *start = head;
-    while(start !=NULL){
-        delete start;
-        start = start->next;
+    while(head !=NULL){
+        RemoveFront();
+        
     }
     crnt = NULL;
 }
