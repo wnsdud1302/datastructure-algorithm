@@ -13,9 +13,9 @@ class Node{
 class Double_linked_list{
     public:
         Double_linked_list();
-        void insert(Node *n,int *data);
-        void InsertFront();
-        void InsertBack();
+        void Insert(Node *n,int *data);
+        void InsertFront(int *data);
+        void InsertBack(int *data);
         void Remove(Node *n);
         void RemoveFront();
         void RemoveBack();
