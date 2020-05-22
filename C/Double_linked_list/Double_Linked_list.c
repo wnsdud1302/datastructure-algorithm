@@ -43,7 +43,7 @@ void InsertBack(list *l, int *data){
 void Remove(list *l, Dnode *dn){
     dn->prev->next = dn->next;
     dn->next->prev = dn->prev;
-    l->crnt = dn->prev;
+    l->crnt = dn->next;
     free(dn);
 }
 
@@ -91,8 +91,8 @@ void PrintCurrent(const list *l){
 }
 
 void Print(const list *l){
-    Dnode *start = l->head;
-    while(start->next != l->tail){
+    Dnode *start = l->head->next;
+    while(start != l->tail){
         printf("%d ", start->data);
         start = start->next;
     }
@@ -100,7 +100,7 @@ void Print(const list *l){
 }
 
 void PrintReverse(const list *l){
-    Dnode *start = l->tail->next;
+    Dnode *start = l->tail->prev;
     while (start != l->head){
         printf("%d ", start->data);
         start = start->prev;
@@ -109,12 +109,10 @@ void PrintReverse(const list *l){
 }
 
 void Clear(list *l){
-    Dnode *start = l->head;
-    while(start != l->tail)
+    while(l->head->next != NULL)
         RemoveFront(l);
     l->crnt = NULL;
 }
  void Terminate(list *l){
-     Clear(l);
-     l->head = l->tail = l->crnt = NULL;
+    Clear(l);
  }
