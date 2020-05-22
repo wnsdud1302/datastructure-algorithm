@@ -20,8 +20,9 @@ class Double_linked_list{
         void RemoveFront();
         void RemoveBack();
         Node *Search(int *data);
-        int next();
-        int prev();
+        bool IsEmpty();
+        bool next();
+        bool prev();
         void PrintCurrent();
         void Print();
         void PrintReverse();

@@ -45,7 +45,33 @@ void Double_linked_list::RemoveBack(){
 }
 
 Node *Double_linked_list::Search(int *data){
-    
+    Node *start = head;
+    while(start->next != tail){
+        if(start->data == *data){
+            return start;
+            crnt = start;
+        }
+        start = start->next;
+    }
+    return NULL;
+}
+
+bool Double_linked_list::IsEmpty(){
+    return head->next == tail;
+}
+
+bool Double_linked_list::next(){
+    if(IsEmpty || crnt->next == NULL)
+        return false;
+    crnt = crnt->next;
+    return true;
+}
+
+bool Double_linked_list::prev(){
+    if(IsEmpty || crnt->prev == NULL)
+        return false;
+    crnt = crnt->prev;
+    return true;
 }
 
 Double_linked_list::~Double_linked_list(){
