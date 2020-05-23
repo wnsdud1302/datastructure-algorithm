@@ -1,12 +1,16 @@
 CC=g++
-CFLAGS=-g 
-OBJS=main.o Double_linked_list.o
+CFLAGS=-g -I. -fpermissive
+DEPS = Double_linked_list.h
+OBJS = main.o
 TARGET=main.exe
  
  all: $(TARGET)
 
 $(TARGET): $(OBJS)
-	$(CC) -o $@ $(OBJS)
+	$(CC) -o $@ $^ $(CFLAGS)
+
+%.o: %.cpp $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 
 clean:
 	rm -f *.o

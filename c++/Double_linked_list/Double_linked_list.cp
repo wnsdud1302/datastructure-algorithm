@@ -1,47 +1,6 @@
-#ifndef DOUBLE_LINKED_LIST_H
-#define DOUBLE_LINKED_LIST_H
 #include<iostream>
+#include"Double_linked_list.h"
 using namespace std;
-
-template <typename T> class Double_linked_list;
-template <typename T>
-class Node{
-public:
-    void SetNode(T x,Node<T> *nxt,Node<T> *prv);
-private:    
-    T data;
-    Node<T> *next;
-    Node<T> *prev;
-    friend class Double_linked_list<T>;
-
-};
-template <typename T>
-class Double_linked_list{
-public:
-    Double_linked_list();
-    ~Double_linked_list();
-    bool IsEmpty();
-    void InsertFront(const T data);
-    void InsertBack(const T data);
-    void RemoveFront();
-    void RemoveBack();
-    Node<T> *Search(const T data);
-    bool Next();
-    bool Prev();
-    void Printcurrent();
-    void Print();
-    void PrintReverse();
-    void Clear();
-    void addSorted(const T data);
-private:
-    Node<T> *head;
-    Node<T> *tail;
-    Node<T> *crnt;
-protected:
-    void Insert(Node<T> *n, T data);
-    void Remove(Node<T> *n);
-
-};
 
 template<typename T>
 void Node<T>::SetNode(T x, Node<T> *nxt,Node<T> *prv){
@@ -174,17 +133,14 @@ void Double_linked_list<T>::Clear(){
 
 template<typename T>
 void Double_linked_list<T>::addSorted(const T data){
-    Node<T> *start = head->next;
+    Node<T> start = head->next;
     if(head->next == tail){
         Insert(head, data);
         crnt = head->next;
     }
-    else{
-        while(start->next != tail){
-            if(start->data > data && start->next->data < data)
-                Insert(start, data);
-        start = start->next;
-        }
+    while(start->next != tail){
+        if(start->data > data && start->next->data < data)
+            Insert(start, data);
+    start = start->next;
     }
 }
-#endif
