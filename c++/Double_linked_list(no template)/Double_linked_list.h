@@ -113,8 +113,8 @@ void Double_linked_list::Clear(){
 
 void Double_linked_list::AddSorted(int data){
     Node *start = head;
-    if(start->next == tail){
-            Insert(head, data);
+        if(start->next == tail){
+        Insert(head, data);
     }
     else{
         while(start->next != tail){
