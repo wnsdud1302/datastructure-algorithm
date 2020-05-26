@@ -15,7 +15,6 @@ public:
     const T& Back() const;
     const T& Data(int k) const;
     const T& operator[](int k) const;
-    const T& operator[](int k);
     void InsertFront(const T& data);
     void InsertBack(const T& data);
     void RemoveFront();
