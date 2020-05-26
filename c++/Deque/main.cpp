@@ -6,7 +6,7 @@ int main(){
     Deque<int> d;
     while(1){
         int menu, x;
-        cout << d.size() << endl;
+        cout << "size : " << d.size() << endl;
         cout << "1) InsertFront 2) InsertBack 3) RemoveFront 4) RemoveBack" << endl;
         cout << " 5) nth data 6) Print 7) PrintReverse 8) Clear 0) Terminate"<<endl;
         cout << "enter : ";
