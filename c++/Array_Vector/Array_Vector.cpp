@@ -1,6 +1,6 @@
 #include"Array_Vector.h"
 
-ArrayVector::ArrayVector() : n(0), capacity(0), d(NULL) {}
+ArrayVector::ArrayVector() : n(0), capacity(0), E(NULL) {}
 
 int ArrayVector::size() const{
     return n;
