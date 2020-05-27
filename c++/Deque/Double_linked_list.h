@@ -194,7 +194,7 @@ void Double_linked_list<T>::PrintReverse(){
 
 template<typename T>
 void Double_linked_list<T>::Clear(){
-    while(head->next != NULL)
+    while(head->next != tail)
         RemoveFront();
     crnt = NULL;
 }

@@ -102,7 +102,6 @@ void Deque<T>::Clear(){
         cout << "데크가 비어있습니다." << endl;
     while(!IsEmpty()){
         RemoveBack();
-        n--;
     }
 }
 
