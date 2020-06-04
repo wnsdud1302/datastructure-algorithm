@@ -4,21 +4,23 @@
 using namespace std;
 
 template<typename T> class Tree;
-
 template<typename T>
 class Tree{
 public:
-    template<typename T>
+template<typename T>
     class BinNode{
     public:
         BinNode();
         BinNode(E &e, BinNode<T> *l, BinNode<T> *r): elem(e), left(l), right(r) {}
-        void Print();
+        void Print(){
+            left->Print();
+            cout << elem <<" ";
+            right->Print();
+        }
     private:
         T& elem;
         BinNode<T> *left;
         BinNode<T> *right;
-        friend class Tree<T>;
     };
 public:
     Tree();
@@ -35,7 +37,6 @@ private:
     BinNode<T> *parent;
     BinNode<T> *child;
 };
-
 
 template<typename T>
 Tree<T>::Tree():root(NULL), parent(NULL), child(NULL) {}
@@ -121,8 +122,26 @@ void Tree<T>::Remove(T& elem){
             parent->right = del->right;
         delete del;
     }
-
-
-
-
+    else{
+        BinNode<T> *change = del;
+        parent = del;
+        del = del->left;
+        while(del->left != NULL){
+            parent = del;
+            del = del->left;
+        }
+        change->elem = del->elem;
+        if(de->right != NULL)
+            parent->left = del->right;
+        else
+            parent->left = NULL;
+        delete del;
+    }
 }
+
+template<typename T>
+void Tree<T>::PrintTree(){
+    root->Print();
+}
+
+#endif
